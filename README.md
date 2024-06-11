@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NextJS Authentication Template
+
+This project provides a basic template for authentication in Next.js using Auth.js and MongoDB adapter. It includes methods for sign-in, sign-out, and authentication. Additionally, it offers a registration feature using MongoDB client. This template serves as a foundation to create the next stages of your web application.
+
+## Features
+
+- **Authentication**: Implemented with NextAuth.js for secure and efficient user authentication.
+- **MongoDB Adapter**: Uses MongoDB as the database for storing user credentials and sessions.
+- **Registration**: Includes a registration form with client-side validation using Zod and server-side processing.
+- **User-Friendly UI**: Built with simple and clean UI components.
 
 ## Getting Started
 
-First, run the development server:
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ensure you have the following installed:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- NextJS
+- AuthJs 
+- MongoDB (local or cloud instance)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Installation
 
-## Learn More
+1. **Clone the repository**:
+   ```
+   git clone https://github.com/your-username/nextjs-auth-template.git
+   cd nextjs-auth-template
+2. **Install dependencies**:
+   ```
+   npm install
+3. **Set up environment variables**:
+   Create a .env.local file in the root directory and add your MongoDB connection string and other necessary environment variables.
+   ```
+   AUTH_SECRET=
+   MONGODB_URI=
+   NODE_ENV=development
+5. **Run the development server**:
+   ```
+   npm run dev
+**JWT token and session will be handled by AuthJs.**
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. **Usage**
+  Register
+    Navigate to the registration page to create a new user account.
+    ```
+    http://localhost:3000/register
+  This will register user in db.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  Sign In
+  ```
+    http://localhost:3000/api/auth/signin
+  ```
+This page is default page provided by AuthJs. Similarly Signoutpage and signout api is handled by AuthJS.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  
